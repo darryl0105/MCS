@@ -26,8 +26,8 @@ import urllib
 import json
 import RPi.GPIO as GPIO
 import Adafruit_DHT
-deviceId = "DiGrUNjI"
-deviceKey = "lDYLQxgr0ZWwy0Ux"
+deviceId = "DgdATed3"
+deviceKey = "mY5Db964fJISxsn1"
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 def post_to_mcs(payload):
@@ -82,6 +82,6 @@ while True:
                 print('Button press')
         else:
                 print('Button released')
-        payload = {"datapoints":[{"dataChnId":"Hum","values":{"value":h0}},{"dataChnId":"Temp","values":{"value":t0}},{"dataChnId":"SwitchStatus","values":{"value":SwitchStatus}}]}
+        payload = {"datapoints":[{"dataChnId":"Humi","values":{"value":h0}},{"dataChnId":"Temp","values":{"value":t0}},{"dataChnId":"SwitchStatus","values":{"value":SwitchStatus}}]}
         post_to_mcs(payload)
         time.sleep(2)
